@@ -128,6 +128,7 @@ namespace BetterSceneLoader
             category.captionText.transform.SetRect(0f, 0f, 1f, 1f, 0f, 2f, -15f, -2f);
             category.captionText.alignment = TextAnchor.MiddleCenter;
             category.options = GetCategories();
+            category.template.GetComponent<ScrollRect>().scrollSensitivity = Mathf.Lerp(30f, 300f, BetterSceneLoader.ScrollSensitivity.Value / 10f);
             category.onValueChanged.AddListener(x =>
             {
                 currentCategoryFolder = CategoryFolders[category.options[x].text];
